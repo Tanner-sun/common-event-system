@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event system</title>
+</head>
+<body>
+	<div title = "div element1">div元素1</div>
+	<div title = "div element2">div元素2</div>
+</body>
+<script type="text/javascript">
+	(function(){
+		var cache = {},
+			guidCounter = 1,
+			expando = "data" + (new Date).getTime();
+		//存放元素数据，并支持扩展	
+		this.getData = function (elem) {
+			var guid = elem[expando];
+			if (!guid) {
+				guid = elem[expando] = guidCounter++;
+				cache[expando] = {};
+			}
+			return cache[expando];
+		}	
+	})()
+
+
+
+
+
+
+</script>
+</html>
